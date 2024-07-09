@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Upload</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html">M cars</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="submit.html">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manage.html">Manage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="orders.html">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sellers.html">Sellers</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <form action="/submit" method="post" enctype="multipart/form-data">
+    <div>
+      <h1> </h1>
+    </div>
+    <div class="col text-center">
+      <input type="file" name="image" id="image" multiple>
+    </div>
+    <div class="col-auto">
+      <label for="carBrand">Car Brand</label>
+      <input type="text" class="form-control" name="carBrand" id="carBrand">
+    </div>
+    <div class="col-auto">
+      <label for="model">Model</label>
+      <input type="text" class="form-control" name="model" id="model">
+    </div>
+    <div class="col-auto">
+      <label for="numberplate">Number plate</label>
+      <input type="text" class="form-control" name="numberplate" id="numberplate">
+    </div>
+    <div class="col-auto">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" name="price" id="price">
+    </div>
+    <div class="col-auto">
+      <label for="bookingamount">Booking Amount</label>
+      <input type="number" class="form-control" name="bookingamount" id="bookingamount">
+    </div>
+    <h3>  Specifications</h3>
+    <div class="col-auto">
+      <label for="enginecapacity">Engine Capacity</label>
+      <input type="text" class="form-control" name="enginecapacity" id="enginecapacity">
+    </div>
+    <div class="col-auto">
+      <label for="horsepower">Horsepower</label>
+      <input type="text" class="form-control" name="horsepower" id="horsepower">
+    </div>
+    <div class="col-auto">
+      <label for="torque">Torque</label>
+      <input type="text" class="form-control" name="torque" id="torque">
+    </div>
+    <div class="col-auto">
+      <label for="mileage">Mileage</label>
+      <input type="text" class="form-control" name="mileage" id="mileage">
+    </div>
+    <div class="col-auto">
+      <label for="fuelType">Fuel Type</label>
+      <input type="text" class="form-control" name="fuelType" id="fuelType">
+    </div>
+    <div class="col-auto">
+      <label for="transmission">Transmission</label>
+      <input type="text" class="form-control" name="transmission" id="transmission">
+    </div>
+    <div class="col-auto">
+      <label for="registrationYear">Registration Year</label>
+      <input type="text" class="form-control" name="registrationYear" id="registrationYear">
+    </div>
+    <div class="col-auto">
+      <label for="kmsDriven">Kms Driven</label>
+      <input type="text" class="form-control" name="kmsDriven" id="kmsDriven">
+    </div>
+    <div class="col-auto">
+      <label for="bodytype">Body Type</label>
+      <input type="text" class="form-control" name="bodytype" id="bodytype">
+    </div>
+    <div class="col-auto">
+      <label for="ownership">Ownership</label>
+      <input type="text" class="form-control" name="ownership" id="ownership">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div class="col text-center">
+
+      <button type="submit" class="btn btn-primary ">Upload</button>
+    </div>
+    <div>
+      <h1> </h1>
+    </div>
+  </form>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

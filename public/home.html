@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <title>Mcars - Buy & Sell Cars</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-white font-sans min-h-screen flex flex-col overflow-x-hidden">
+    <!-- Header -->
+    <div class="flex items-center p-4 bg-white justify-between">
+        <div class="flex items-center space-x-4">
+            <img src="mcars.png" alt="Mcars Logo" class="h-8 w-8">
+            <a href="#" class="text-[#181811] text-lg font-bold">Home</a>
+            <a href="#" class="text-[#8c875f] text-lg font-bold">Buy Car</a>
+            <a href="#" class="text-[#8c875f] text-lg font-bold">Sell Car</a>
+            <a href="#" class="text-[#8c875f] text-lg font-bold">Orders</a>
+            <a href="#" class="text-[#8c875f] text-lg font-bold">Saved</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4">
+        <div class="p-4 md:p-8 bg-cover bg-center bg-no-repeat rounded-xl min-h-[480px] flex flex-col justify-end"
+            style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/98e35fb5-3087-4ffc-bd76-65b56f2c6a6c.png");'>
+            <div class="flex flex-col gap-2 text-left text-white">
+                <h1 class="text-4xl md:text-5xl font-black leading-tight tracking-tight">Buy, sell or trade your car</h1>
+                <h2 class="text-sm md:text-base font-normal leading-normal">No need to leave home. We'll deliver to you.</h2>
+            </div>
+            <div class="flex flex-wrap gap-3 mt-4">
+                <button class="min-w-[84px] max-w-[480px] h-10 md:h-12 px-4 md:px-5 rounded-xl bg-[#fbeb5b] text-black text-sm md:text-base font-bold">Buy Car</button>
+                <button class="min-w-[84px] max-w-[480px] h-10 md:h-12 px-4 md:px-5 rounded-xl bg-[#f5f4f0] text-[#181811] text-sm md:text-base font-bold">Sell My Car</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cars Under 10 Lakhs -->
+    <div class="container mx-auto px-4">
+        <h2 class="text-[#181811] text-2xl font-bold tracking-tight py-5">Cars under ₹10 Lakhs</h2>
+        <div class="flex overflow-x-auto gap-3">
+            <div class="flex flex-col gap-4 min-w-[200px] md:min-w-[300px] flex-1 rounded-lg">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/stability/2a40b7df-b8cc-4871-a8f9-c9f4dcc1d8ba.png");'></div>
+                <div>
+                    <p class="text-[#181811] text-base font-medium">Audi A4</p>
+                    <p class="text-[#8c875f] text-sm">₹9.8L - 2014</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 min-w-[200px] md:min-w-[300px] flex-1 rounded-lg">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/stability/141dc813-ad79-4e14-81fe-5768bae78df8.png");'></div>
+                <div>
+                    <p class="text-[#181811] text-base font-medium">Honda Accord</p>
+                    <p class="text-[#8c875f] text-sm">₹8.5L - 2010</p>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 min-w-[200px] md:min-w-[300px] flex-1 rounded-lg">
+                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/stability/d473dd5d-8e70-4e0d-84eb-e73d9f0cbe34.png");'></div>
+                <div>
+                    <p class="text-[#181811] text-base font-medium">Nissan Altima</p>
+                    <p class="text-[#8c875f] text-sm">₹7.5L - 2009</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="h-5 bg-white"></div>
+</body>
+</html>
