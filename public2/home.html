@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="280099693995-rmostofdusp1m2464imes6ht64q5rs61.apps.googleusercontent.com"
+    content="280099693995-rmostofdusp1m2464imes6ht64q5rs61.apps.googleusercontent.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/appwrite"></script>
+  <title>Home</title>
+  <style>
+    .card {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      height: 180px;
+      overflow: auto;
+    }
+    .sold-out-overlay {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-270%);
+      background-color: red;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 5px 0;
+      z-index: 1;
+      opacity: 0.8;
+    }
+    .filter-card {
+      position: fixed;
+      top: 80px;
+      left: 10px;
+      width: 250px;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #f8f9fa;
+      z-index: 1000;
+    }
+    .content {
+      margin-left: 280px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="home.html">M cars</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Buy Car<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Sell Car</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="myorders.html">My Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="wishlist.html">Saved</a>
+      </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button id="loginBtn" class="btn btn-outline-light my-2 my-sm-0 ml-2 m" data-toggle="modal" data-target="#authModal">Login/Signup</button>
+    </div>
+  </nav>
+  <div class="filter-card">
+    <h5>Filters</h5>
+    <form id="filterForm">
+      <div class="form-group">
+        <label for="Brand">Brand</label>
+        <select class="form-control" id="car_brand" name="car_brand">
+          <option value="">Any</option>
+          <option value="Maruti">Maruti</option>
+          <option value="Hyundai">Hyundai</option>
+          <option value="Tata">Tata</option>
+          <option value="Honda">Honda</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Skoda">Skoda</option>
+          <option value="Volkswagen">Volkswagen</option>
+          <option value="Ford">Ford</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="yearRange">Year Range</label>
+        <div id="yearRange"></div>
+        <div class="d-flex justify-content-between">
+          <span id="yearRangeMinValue">2000</span>
+          <span id="yearRangeMaxValue">2024</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="priceRange">Price Range</label>
+        <div id="priceRange"></div>
+        <div class="d-flex justify-content-between">
+          <span id="priceRangeMinValue">10000</span>
+          <span id="priceRangeMaxValue">10000000</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="fueltype">Fuel Type</label>
+        <select class="form-control" id="fueltype" name="fueltype">
+          <option value="">Any</option>
+          <option value="Petrol">Petrol</option>
+          <option value="Diesel">Diesel</option>
+          <option value="CNG">CNG</option>
+          <option value="Electric">Electric</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="transmission">Transmission</label>
+        <select class="form-control" id="transmission" name="transmission">
+          <option value="">Any</option>
+          <option value="Manual">Manual</option>
+          <option value="Automatic">Automatic</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="bodytype">Body Type</label>
+        <select class="form-control" id="bodytype" name="bodytype">
+          <option value="">Any</option>
+          <option value="suv">SUV</option>
+          <option value="hatchback">Hatchback</option>
+          <option value="sedan">Sedan</option>
+          <option value="mpv">MPV</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="ownership">Ownership</label>
+        <select class="form-control" id="ownership" name="ownership">
+          <option value="">Any</option>
+          <option value="1st">1st Owner</option>
+          <option value="2nd owner">2nd Owner</option>
+          <option value="3rd owner">3rd Owner</option>
+        </select>
+      </div>
+      <button type="reset" class="btn btn">Reset</button>
+      <button type="submit" class="btn btn-primary">Apply</button>
+    </form>
+  </div>
+  <div class="container mt-4 content">
+    <div id="car-list" class="row"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/appwrite"></script>
+  <script src="login.js"></script>
+  <script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="authModalLabel">Login/Signup</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button id="google-login-btn" onclick="loginWithGoogle()" class="btn btn-secondary btn-block mt-3">Login with Google</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Mobile Number -->
+<div class="modal fade" id="mobileModal" tabindex="-1" role="dialog" aria-labelledby="mobileModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mobileModalLabel">Enter Mobile Number</h5>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="mobileForm">
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" class="form-control" id="mobileNumber" required>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitMobileBtn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
